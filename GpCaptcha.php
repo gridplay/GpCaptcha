@@ -52,7 +52,7 @@ class GpCaptcha
 			'input' => $request->captcha
 		];
 		$ret = self::senddata('post', 'captcha/verify', $data, []);
-		if (is_array($ret)) {
+		if (is_array($ret) && array_key_exists('success', $ret)) {
 			if ($ret['success'] === true) {
 				return true;
 			}
