@@ -40,6 +40,8 @@ class GpCaptcha
 			$img = '<img src="'.$ret['image'].'"><br>';
 			$img .= '<input type="hidden" name="token" value="'.$token.'">';
 			$img .= '<input type="text" name="captcha" value="" class="'.$class.'">';
+		}else{
+			dd($ret);
 		}
 		return $img;
 	}
