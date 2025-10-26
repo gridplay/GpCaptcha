@@ -9,7 +9,6 @@
   },
   "require": {
     "php": "^8.1",
-    "illuminate/facades": "^12.0",
     "illuminate/support": "^12.0"
   },
   "extra": {
