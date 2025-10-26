@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 use Illuminate\Support\Cache;
 use Illuminate\Support\Request;
+use Illuminate\Support\Log;
 class GpCaptcha
 {
 	private static function senddata($meth = 'get', $uri = '', $data = [], $h = [])
@@ -32,6 +33,7 @@ class GpCaptcha
 	{
 		$ret = self::senddata('get', 'captcha', [], []);
 		$img = "";
+		Log::debug($ret);
 		if (is_array($ret)) {
 			$token = $ret['token'];
 			$timestamp = $ret['timestamp'];
