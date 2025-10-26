@@ -1,0 +1,24 @@
+{
+  "name": "gridplay/gpcaptcha",
+  "description": "Custom CAPTCHA-as-a-Service for Laravel",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "GridPlay\\GpCaptcha\\": "/"
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "illuminate/support": "^10.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "GridPlay\\GpCaptcha\\CaptchaServiceProvider"
+      ],
+      "aliases": {
+          "GpCaptcha": "GridPlay\\GpCaptcha\\GpCaptcha"
+      }
+    }
+  }
+}
