@@ -33,7 +33,7 @@ class GpCaptcha
 	{
 		$ret = self::senddata('get', 'captcha', [], []);
 		$img = "";
-		if (is_array($ret)) {
+		if (is_array($ret) && !array_key_exists('error', $ret)) {
 			$token = $ret['token'];
 			$timestamp = $ret['timestamp'];
 			Cache::put("captcha:$token", $timestamp, now()->addMinutes(5));
