@@ -3,7 +3,6 @@ namespace GridPlay\GpCaptcha;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Request;
 class GpCaptcha
 {
 	private static function senddata($meth = 'get', $uri = '', $data = [], $h = [])
@@ -44,7 +43,7 @@ class GpCaptcha
 		}
 		return $img;
 	}
-	public static function Validate(Request $request)
+	public static function Validate($request = null)
 	{
 		$timestamp = Cache::pull("captcha:{$request->token}");
 		$data = [
