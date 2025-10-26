@@ -18,7 +18,6 @@ class GpCaptcha
 			if (strtolower($meth) == "post") {
 				$response = $http->post($url, $data);
 			}
-			dd($response);
 			if ($response->ok()) {
 				return $response->json();
 			}else{
