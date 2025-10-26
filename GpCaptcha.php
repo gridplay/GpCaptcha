@@ -13,14 +13,14 @@ class GpCaptcha
 		$url = "https://captcha.gridplay.ca/api/".$uri;
 		try {
 			if (strtolower($meth) == "get") {
-				$response = $http->withQueryParameters($data)->get($url);
+				$response = $http->get($url);
 			}
 			if (strtolower($meth) == "post") {
 				$response = $http->post($url, $data);
 			}
+			dd($response);
 			if ($response->ok()) {
-				$json = $response->json();
-				return json_decode($json, true);
+				return $response->json();
 			}else{
 				return ['error' => 'not found'];
 			}
