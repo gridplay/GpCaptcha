@@ -2,7 +2,7 @@
 namespace GridPlay\GpCaptcha;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
-use Illuminate\Support\Cache;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Request;
 class GpCaptcha
 {
